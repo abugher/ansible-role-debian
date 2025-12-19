@@ -1,6 +1,19 @@
-source_url:                     'http://deb.debian.org/debian'
+source_url:                     'https://deb.debian.org/debian'
+source_suites:                  
+  - "{{ os_release_name }}"
+  - "{{ os_release_name }}-updates"
+  - "{{ os_release_name }}-backports"
 source_components:
   - 'main'
   - 'contrib'
   - 'non-free'
   - 'non-free-firmware'
+keyring_file:                   '/usr/share/keyrings/debian-archive-keyring.gpg'
+remove_files:
+  - '/etc/sources.list.d/debian.sources'
+template_files:
+  - owner:                      'root'
+    group:                      'root'
+    mode:                       '0644'
+    src:                        'templates/conf/sources.list.d/debian_sources.j2'
+    dest:                       "/etc/apt/sources.list.d/debian_{{ os_release_name }}.sources"
