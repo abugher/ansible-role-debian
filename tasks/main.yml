@@ -1,6 +1,6 @@
 ---
-- include_tasks:        '../tasks/remove_files.yml'
-- include_tasks:        '../tasks/template_files.yml'
+- include_tasks:        'tasks/common/remove_files.yml'
+- include_tasks:        'tasks/common/template_files.yml'
 - assert:
     that:               True
     quiet:              True
