@@ -4,3 +4,10 @@ Suites: {{ source_suites|join(' ') }}
 Components: {{ source_components|join(' ') }}
 Signed-By: {{ keyring_file }}
 
+# debian-security is not available at the same domain as the other suites.
+Types: deb deb-src
+URIs: {{ security_source_url }}
+Suites: {{ security_source_suites|join(' ') }}
+Components: {{ source_components|join(' ') }}
+Signed-By: {{ keyring_file }}
+

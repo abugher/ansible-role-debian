@@ -4,6 +4,5 @@
     that:               True
     quiet:              True
   changed_when:         True
-  when:                 remove_files_result.changed
-                        or template_files_result.changed
+  when:                 template_files_result.changed
   notify:               'run updates'

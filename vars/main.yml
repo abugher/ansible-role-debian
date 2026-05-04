@@ -3,6 +3,10 @@ source_suites:
   - "{{ os_release_name }}"
   - "{{ os_release_name }}-updates"
   - "{{ os_release_name }}-backports"
+# debian-security is not available at the same domain as the other suites.
+security_source_url:            'https://security.debian.org/debian-security'
+security_source_suites:
+  - "{{ os_release_name }}-security"
 source_components:
   - 'main'
   - 'contrib'
