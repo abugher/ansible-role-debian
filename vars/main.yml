@@ -9,8 +9,6 @@ source_components:
   - 'non-free'
   - 'non-free-firmware'
 keyring_file:                   '/usr/share/keyrings/debian-archive-keyring.gpg'
-remove_files:
-  - '/etc/sources.list.d/debian.sources'
 template_files:
   - owner:                      'root'
     group:                      'root'
